@@ -62,6 +62,6 @@ Carthage/Build
 fastlane/report.xml
 fastlane/screenshots
 
-QQMusic/QQResources/
+QQMusic/QQMusic/QQResources/
 !Musics.plist
 
