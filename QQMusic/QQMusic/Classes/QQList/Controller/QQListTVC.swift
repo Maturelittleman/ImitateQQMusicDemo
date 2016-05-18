@@ -10,82 +10,82 @@ import UIKit
 
 class QQListTVC: UITableViewController {
     
-    
-    
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        QQMusicDataTool.getMusicData { (musicMs) -> () in
-            
-            print(musicMs)
+    var musicMs: [QQListModel] = [QQListModel]() {
+        didSet {
+            tableView.reloadData()
         }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //取出数据
+        QQMusicDataTool.getMusicData { (musicMs) -> () in
+            
+            self.musicMs = musicMs
+        }
+
+        //界面搭建
+        setUpInit()
+        
     }
 
+}
+
+//数据显示
+extension QQListTVC {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return musicMs.count
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        
+        //创建自定义cell
+        let cell = QQMusicListCell.cellWithTableView(tableView)
+        //取出模型
+        cell.musicM = musicMs[indexPath.row]
+        //选定样式
+        cell.selectionStyle = .None
+        
         return cell
     }
-    */
+    
+    
+}
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+
+//界面搭建
+extension QQListTVC {
+    
+    private func setUpInit() -> () {
+        setUpTableView()
+        setUpNavigationBar()
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    private func setUpTableView() -> () {
+        //背景图片
+        let imageV = UIImageView(image: UIImage(named: "QQListBack"))
+        tableView.backgroundView = imageV
+        
+        //行高
+        tableView.rowHeight = 60
+        
+        //分割线效果
+        tableView.separatorStyle = .None
+        
+        
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
+    
+    private func setUpNavigationBar() -> () {
+        //设置顶部导航栏隐藏
+        navigationController?.navigationBarHidden = true
     }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        //设置状态栏字体颜色
+        return .LightContent
     }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    
 }

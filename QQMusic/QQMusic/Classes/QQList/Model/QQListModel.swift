@@ -40,8 +40,8 @@ class QQListModel: NSObject {
         setValuesForKeysWithDictionary(dict)
     }
     
-    
-    override func setValue(value: AnyObject?, forKey key: String) {
+    //防止字典转模型抛出异常
+    override func setValue(value: AnyObject?, forUndefinedKey key: String) {
         
     }
     
