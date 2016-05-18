@@ -21,15 +21,12 @@ class QQListTVC: UITableViewController {
         
         //取出数据
         QQMusicDataTool.getMusicData { (musicMs) -> () in
-            
             self.musicMs = musicMs
         }
-
+        
         //界面搭建
         setUpInit()
-        
     }
-
 }
 
 //数据显示
@@ -52,7 +49,12 @@ extension QQListTVC {
         return cell
     }
     
-    
+    //cell即将显示调用
+    override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let musicCell = cell as! QQMusicListCell
+        musicCell.beginAnimation(AnimationType.Translation)
+    }
 }
 
 

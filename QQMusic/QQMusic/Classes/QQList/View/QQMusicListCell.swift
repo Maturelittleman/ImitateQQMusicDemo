@@ -8,6 +8,12 @@
 
 import UIKit
 
+//列表动画
+enum AnimationType {
+    case Rotation  //旋转动画
+    case Translation  //平移动画
+}
+
 class QQMusicListCell: UITableViewCell {
 
     @IBOutlet weak var iconImageView: UIImageView!
@@ -41,13 +47,41 @@ class QQMusicListCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         //裁剪头像为圆形
-        iconImageView.layer.cornerRadius = iconImageView.frame.width * 0.5
+        iconImageView.layer.cornerRadius = iconImageView.width * 0.5
         iconImageView.layer.masksToBounds = true
-        
     }
     
     //设置高亮显示为空
-    override func setHighlighted(highlighted: Bool, animated: Bool) {
-        
-    }
+    override func setHighlighted(highlighted: Bool, animated: Bool) {}
+    
 }
+
+
+extension QQMusicListCell {
+    
+    //开始列表动画
+    func beginAnimation(type: AnimationType) -> () {
+        //两种动画选择,枚举
+        switch type {
+        case .Rotation:
+            //移除之前的动画
+            self.layer.removeAnimationForKey("rotation")
+            //创建CAlayer动画
+            let animation = CAKeyframeAnimation(keyPath: "transform.rotation.z")
+            //设置值
+            animation.values = [M_PI * 0.25, 0]
+            //设置时间
+            animation.duration = 0.2
+            //添加到当前layer
+            self.layer.addAnimation(animation, forKey: "rotation")
+            
+        case .Translation:
+            self.layer.removeAnimationForKey("translation")
+            let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
+            animation.duration = 0.2
+            animation.values = [70, 0]
+            self.layer.addAnimation(animation, forKey: "translation")
+        }
+    }
+
+    }
