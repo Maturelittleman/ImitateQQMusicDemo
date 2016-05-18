@@ -55,6 +55,11 @@ extension QQListTVC {
         let musicCell = cell as! QQMusicListCell
         musicCell.beginAnimation(AnimationType.Translation)
     }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let musicM = musicMs[indexPath.row]
+        ZQAudioOperationTool.sharInstance.playMusic(musicM)
+    }
 }
 
 
