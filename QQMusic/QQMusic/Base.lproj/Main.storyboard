@@ -20,7 +20,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="cfZ-Ac-X1o"/>
                     <connections>
-                        <segue destination="dg8-Aq-0uY" kind="show" identifier="listToDetailVC" id="JCi-mF-INL"/>
+                        <segue destination="dg8-Aq-0uY" kind="show" identifier="listToDetail" id="JCi-mF-INL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wO3-Gd-ufO" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -16,10 +16,11 @@ class ZQAudioOperationTool: NSObject {
     //播放工具
     let tool = ZQAudioTool()
     
+    //播放音乐
     func playMusic(musicM: QQListModel) -> () {
-        
+        //取出模型中的音乐名称
         let fileName = musicM.filename
-        
+        //播放音乐
         tool.playAudioWithName(fileName!)
     }
 

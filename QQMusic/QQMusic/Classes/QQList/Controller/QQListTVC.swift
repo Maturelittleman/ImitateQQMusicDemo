@@ -51,14 +51,19 @@ extension QQListTVC {
     
     //cell即将显示调用
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
-        
+        //动画效果
         let musicCell = cell as! QQMusicListCell
         musicCell.beginAnimation(AnimationType.Translation)
     }
     
+    //cell被点击的时候调用
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //拿到数据模型
         let musicM = musicMs[indexPath.row]
+        //播放音乐
         ZQAudioOperationTool.sharInstance.playMusic(musicM)
+        //跳转到详情界面
+        performSegueWithIdentifier("listToDetail", sender: nil)
     }
 }
 
