@@ -70,16 +70,25 @@
                                         <state key="normal" image="player_btn_pause_normal"/>
                                         <state key="selected" image="player_btn_play_normal"/>
                                         <state key="highlighted" image="player_btn_play_highlight"/>
+                                        <connections>
+                                            <action selector="playOrPause:" destination="dg8-Aq-0uY" eventType="touchUpInside" id="ul0-H3-gNT"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTd-ge-8Px">
                                         <rect key="frame" x="154" y="54" width="64" height="64"/>
                                         <state key="normal" image="player_btn_pre_normal"/>
                                         <state key="highlighted" image="player_btn_pre_highlight"/>
+                                        <connections>
+                                            <action selector="preMusic" destination="dg8-Aq-0uY" eventType="touchUpInside" id="VxC-Lt-Wqj"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGI-u6-N3G">
                                         <rect key="frame" x="382" y="54" width="64" height="64"/>
                                         <state key="normal" image="player_btn_next_normal"/>
                                         <state key="highlighted" image="player_btn_next_highlight"/>
+                                        <connections>
+                                            <action selector="nextMusic" destination="dg8-Aq-0uY" eventType="touchUpInside" id="38I-zD-Yy0"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-jH-Uyh">
                                         <rect key="frame" x="10" y="10" width="34" height="14.5"/>

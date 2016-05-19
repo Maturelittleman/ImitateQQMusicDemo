@@ -14,10 +14,16 @@ class ZQAudioTool: NSObject {
     var player: AVAudioPlayer?
 
     //根据音频名称播放音频
-    func playAudioWithName(audioName: String) -> () {
+    func playMusic(name: String) -> () {
         
         //取出url
-        guard let url = NSBundle.mainBundle().URLForResource(audioName, withExtension: nil) else {
+        guard let url = NSBundle.mainBundle().URLForResource(name, withExtension: nil) else {
+            return
+        }
+        
+        //播放的是同一首歌曲
+        if url == player?.url {
+            player?.play()
             return
         }
         
@@ -28,16 +34,20 @@ class ZQAudioTool: NSObject {
             print(error)
             return
         }
-       
+        
         //准备播放
         player?.prepareToPlay()
-        
         //开始播放
         player?.play()
     }
     
+    //继续播放
+    func resumeCurrentMusic() {
+        player?.play()
+    }
+    
     //暂停音频
-    func pauseCurrentAudio() {
+    func pauseCurrentMusic() {
         player?.pause()
     }
     

@@ -26,13 +26,36 @@ class QQDetailVC: UIViewController {
 
 //业务逻辑
 extension QQDetailVC {
+    
+    //播放暂停
+    @IBAction func playOrPause(sender: UIButton) {
+        //点击切换属性
+        sender.selected = !sender.selected
+        //判断当前状态
+        if sender.selected {
+            ZQAudioOperationTool.sharInstance.pauseCurrentMusic()
+        }else {
+            ZQAudioOperationTool.sharInstance.playCurrentMusic()
+        }
+        
+    }
+    
+    //上一首
+    @IBAction func preMusic() {
+        ZQAudioOperationTool.sharInstance.preMusic()
+    }
+    
+    //下一首
+    @IBAction func nextMusic() {
+        ZQAudioOperationTool.sharInstance.nextMusic()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setUpViewOnce()
         
     }
-    
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
@@ -105,7 +128,7 @@ extension QQDetailVC {
 //动画效果处理
 extension QQDetailVC: UIScrollViewDelegate{
     
-    //拖动scrollView调用
+    //拖动scrollView调用 歌词面板效果
     func scrollViewDidScroll(scrollView: UIScrollView) {
         let alpha = 1 - scrollView.contentOffset.x / scrollView.width
         

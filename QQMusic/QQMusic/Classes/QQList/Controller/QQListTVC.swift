@@ -22,6 +22,7 @@ class QQListTVC: UITableViewController {
         //取出数据
         QQMusicDataTool.getMusicData { (musicMs) -> () in
             self.musicMs = musicMs
+            ZQAudioOperationTool.sharInstance.musicMList = musicMs
         }
         
         //界面搭建
