@@ -11,6 +11,8 @@ import UIKit
 //专门用来保存属性
 class QQDetailVC: UIViewController {
     
+    //进度条
+    @IBOutlet weak var progressSlider: UISlider!
     //专辑图片
     @IBOutlet weak var foreImageView: UIImageView!
     //歌词
@@ -27,14 +29,15 @@ extension QQDetailVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        addLrcView()
+        setUpViewOnce()
         
     }
     
-    override func viewDidLayoutSubviews() {
+    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
         
-        setUpForeImageView()
-        setUplrcViewFrame()
+        setUpFrame()
     }
     
 }
@@ -42,13 +45,30 @@ extension QQDetailVC {
 //界面处理
 extension QQDetailVC {
     
+    //界面添加子控件
+    func setUpViewOnce() {
+        setUpSlider()
+        addLrcView()
+    }
+    
+    //设置界面Frame
+    func setUpFrame() {
+        
+        setUpForeImageView()
+        setUplrcViewFrame()
+    }
+    
+    //设置进度条豆豆
+    func setUpSlider() {
+        progressSlider.setThumbImage(UIImage(named: "player_slider_playback_thumb"), forState: UIControlState.Normal)
+    }
+    
     //设置歌词的frame
     func setUplrcViewFrame() {
         
         lrcView?.frame = lrcBackView.bounds
         lrcView?.x = lrcBackView.width
         lrcBackView.contentSize = CGSizeMake(lrcBackView.width * 2, 0)
-        
     }
     
     //添加 歌词视图
@@ -64,6 +84,8 @@ extension QQDetailVC {
         lrcBackView.pagingEnabled = true
         //设置滚动条
         lrcBackView.showsHorizontalScrollIndicator = false
+        //scrollView代理
+        lrcBackView.delegate = self
     }
     
     //设置专辑图片圆角
@@ -77,4 +99,18 @@ extension QQDetailVC {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return .LightContent
     }
+}
+
+
+//动画效果处理
+extension QQDetailVC: UIScrollViewDelegate{
+    
+    //拖动scrollView调用
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        let alpha = 1 - scrollView.contentOffset.x / scrollView.width
+        
+        foreImageView.alpha = alpha
+        lrcLabel.alpha = alpha
+    }
+    
 }
