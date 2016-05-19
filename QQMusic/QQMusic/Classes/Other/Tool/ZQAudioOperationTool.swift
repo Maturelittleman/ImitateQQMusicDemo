@@ -11,6 +11,7 @@ import UIKit
 class ZQAudioOperationTool: NSObject {
     
     //单例模式
+    //因为会用很多界面使用,多个界面数据操作一致
     static let sharInstance = ZQAudioOperationTool()
     
     //播放工具

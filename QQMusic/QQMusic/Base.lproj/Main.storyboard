@@ -20,30 +20,12 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="cfZ-Ac-X1o"/>
                     <connections>
-                        <segue destination="dg8-Aq-0uY" kind="show" identifier="listToDetail" id="JCi-mF-INL"/>
+                        <segue destination="ql5-g5-Aeg" kind="show" identifier="listToDetail" id="JCi-mF-INL"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wO3-Gd-ufO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="926" y="127"/>
-        </scene>
-        <!--DetailVC-->
-        <scene sceneID="C5d-1g-tOY">
-            <objects>
-                <viewController id="dg8-Aq-0uY" customClass="QQDetailVC" customModule="QQMusic" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="VmB-gm-PRs"/>
-                        <viewControllerLayoutGuide type="bottom" id="6Bu-k0-vVg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="q7f-h4-4RD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bNc-nN-dIe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1694" y="-117"/>
+            <point key="canvasLocation" x="1008" y="45"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Pn5-Fx-d75">
@@ -61,7 +43,15 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hHw-B3-CNy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="241" y="127"/>
+            <point key="canvasLocation" x="284" y="36"/>
+        </scene>
+        <!--QQDetailVC-->
+        <scene sceneID="e4q-Zf-BTG">
+            <objects>
+                <viewControllerPlaceholder storyboardName="QQDetailVC" id="ql5-g5-Aeg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mf0-bQ-Gee" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1524" y="45"/>
         </scene>
     </scenes>
 </document>

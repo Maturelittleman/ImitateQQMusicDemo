@@ -39,6 +39,7 @@ class ZQAudioTool: NSObject {
     //暂停音频
     func pauseCurrentAudio() {
         player?.pause()
-        
     }
+    
+    
 }

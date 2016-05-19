@@ -11,6 +11,7 @@
 		27100E151CEC69F800821E80 /* QQMusicListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 27100E131CEC69F800821E80 /* QQMusicListCell.xib */; };
 		27100E171CEC894500821E80 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27100E161CEC894500821E80 /* UIView+Extension.swift */; };
 		27100E191CECA10700821E80 /* ZQAudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27100E181CECA10700821E80 /* ZQAudioTool.swift */; };
+		271B31981CED84670078AB6E /* QQDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271B31971CED84670078AB6E /* QQDetailVC.storyboard */; };
 		2732AB191CECA68100F99790 /* ZQAudioOperationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732AB181CECA68100F99790 /* ZQAudioOperationTool.swift */; };
 		27621E211CEC03CF0025FA42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27621E1F1CEC03CF0025FA42 /* Main.storyboard */; };
 		27621E231CEC03CF0025FA42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27621E221CEC03CF0025FA42 /* Assets.xcassets */; };
@@ -85,6 +86,7 @@
 		27100E131CEC69F800821E80 /* QQMusicListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QQMusicListCell.xib; sourceTree = "<group>"; };
 		27100E161CEC894500821E80 /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		27100E181CECA10700821E80 /* ZQAudioTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZQAudioTool.swift; sourceTree = "<group>"; };
+		271B31971CED84670078AB6E /* QQDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QQDetailVC.storyboard; sourceTree = "<group>"; };
 		2732AB181CECA68100F99790 /* ZQAudioOperationTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZQAudioOperationTool.swift; sourceTree = "<group>"; };
 		27621E181CEC03CF0025FA42 /* QQMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27621E201CEC03CF0025FA42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			isa = PBXGroup;
 			children = (
 				27621E5D1CEC0A8C0025FA42 /* QQDetailVC.swift */,
+				271B31971CED84670078AB6E /* QQDetailVC.storyboard */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -505,6 +508,7 @@
 			files = (
 				27621EFC1CEC17B30025FA42 /* 255319.lrc in Resources */,
 				27621EF71CEC17B30025FA42 /* 10736444.lrc in Resources */,
+				271B31981CED84670078AB6E /* QQDetailVC.storyboard in Resources */,
 				27621F041CEC17B30025FA42 /* 12309111.mp3 in Resources */,
 				27621EF11CEC17B30025FA42 /* nanquan_icon@2x.jpg in Resources */,
 				27621EEB1CEC17B30025FA42 /* jj_icon@2x.png in Resources */,
