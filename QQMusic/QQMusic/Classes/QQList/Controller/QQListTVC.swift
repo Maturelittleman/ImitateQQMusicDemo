@@ -52,6 +52,7 @@ extension QQListTVC {
     
     //cell即将显示调用
     override func tableView(tableView: UITableView, willDisplayCell cell: UITableViewCell, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         //动画效果
         let musicCell = cell as! QQMusicListCell
         musicCell.beginAnimation(AnimationType.Translation)
@@ -59,12 +60,33 @@ extension QQListTVC {
     
     //cell被点击的时候调用
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
         //拿到数据模型
         let musicM = musicMs[indexPath.row]
         //播放音乐
         ZQAudioOperationTool.sharInstance.playMusic(musicM)
         //跳转到详情界面
         performSegueWithIdentifier("listToDetail", sender: nil)
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        
+        //取出在当前窗口的cell
+        guard let indexPaths = tableView.indexPathsForVisibleRows else {
+            return
+        }
+        
+        //取出前后两行索引
+        let first = indexPaths.first?.row ?? 0
+        let last = indexPaths.last?.row ?? 0
+        //计算中间一行对应的索引
+        let middle = Int(Float(first + last) * 0.5)
+        //遍历当前窗口的cell
+        for indexPath in indexPaths
+        {
+            let cell = tableView.cellForRowAtIndexPath(indexPath)
+            cell?.x = CGFloat(abs(indexPath.row - middle) * 20)
+        }
     }
 }
 
@@ -73,11 +95,13 @@ extension QQListTVC {
 extension QQListTVC {
     
     private func setUpInit() -> () {
+        
         setUpTableView()
         setUpNavigationBar()
     }
     
     private func setUpTableView() -> () {
+        
         //背景图片
         let imageV = UIImageView(image: UIImage(named: "QQListBack"))
         tableView.backgroundView = imageV
@@ -92,11 +116,13 @@ extension QQListTVC {
     }
     
     private func setUpNavigationBar() -> () {
+        
         //设置顶部导航栏隐藏
         navigationController?.navigationBarHidden = true
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        
         //设置状态栏字体颜色
         return .LightContent
     }
