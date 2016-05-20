@@ -4,14 +4,32 @@
 //
 //  Created by 仲琦 on 16/5/18.
 //  Copyright © 2016年 仲琦. All rights reserved.
-//  负责的音乐播放的业务逻辑, 比如, 顺序播放, 随机播放等等
+//  负责的音乐播放的业务逻辑, 比如, 顺序播放, var放等等
 
 import UIKit
 
+//属性
 class ZQAudioOperationTool: NSObject {
     
+    private var musicMessageModel: QQMusicMessageModel = QQMusicMessageModel()
+    
+    func getNewMessageModel() -> QQMusicMessageModel {
+        
+        //给属性赋值,保证数据是最新的状态
+        musicMessageModel.listModel = musicMList?[index]
+        //总时长
+        musicMessageModel.totalTime = tool.player?.duration ?? 0
+        //已经播放的市场
+        musicMessageModel.costTime = tool.player?.currentTime ?? 0
+        //播放的状态
+        musicMessageModel.player = tool.player?.playing ?? false
+        
+        return musicMessageModel
+    }
+    
+    
     //单例模式
-    //因为会用很多界面使用,多个界面数据操作一致
+    //因为会用很多界面使用,保证多个界面数据操作一致
     static let sharInstance = ZQAudioOperationTool()
     
     //播放工具
@@ -34,6 +52,10 @@ class ZQAudioOperationTool: NSObject {
     
     //音乐播放列表
     var musicMList: [QQListModel]?
+}
+
+//业务逻辑
+extension ZQAudioOperationTool {
     
     //播放音乐
     func playMusic(musicM: QQListModel) -> () {
@@ -80,4 +102,5 @@ class ZQAudioOperationTool: NSObject {
             playMusic(musicM)
         }
     }
+    
 }

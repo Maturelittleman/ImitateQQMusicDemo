@@ -41,6 +41,9 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UId-ca-Bab">
                                         <rect key="frame" x="10" y="30" width="40" height="40"/>
                                         <state key="normal" image="miniplayer_btn_playlist_close_b"/>
+                                        <connections>
+                                            <action selector="homeBtnClick:" destination="dg8-Aq-0uY" eventType="touchUpInside" id="i3P-uu-l9Q"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="陈奕迅" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1YS-sv-Uhc">
                                         <rect key="frame" x="278" y="60" width="42" height="17"/>
@@ -92,12 +95,18 @@
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yC8-jH-Uyh">
                                         <rect key="frame" x="10" y="10" width="34" height="14.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="dIl-ei-xKf"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="czk-iP-N8S">
                                         <rect key="frame" x="556" y="10" width="34" height="14.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="34" id="Usb-wU-iyo"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -182,10 +191,15 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="backImageView" destination="sXy-21-Xht" id="LWA-eA-1b5"/>
+                        <outlet property="costTimeLabel" destination="yC8-jH-Uyh" id="Icz-NI-5FV"/>
                         <outlet property="foreImageView" destination="jOg-D1-JVQ" id="cpn-WK-2aO"/>
                         <outlet property="lrcBackView" destination="gYW-4P-Rih" id="Oiv-xF-pOu"/>
                         <outlet property="lrcLabel" destination="p5O-0j-dar" id="wSk-UT-stn"/>
                         <outlet property="progressSlider" destination="ViA-Zs-xXG" id="WbY-dd-vJB"/>
+                        <outlet property="singerLabel" destination="1YS-sv-Uhc" id="Rhk-Az-bn2"/>
+                        <outlet property="songLabel" destination="cKF-e2-qdx" id="b2k-cG-F7w"/>
+                        <outlet property="totalTimeLabel" destination="czk-iP-N8S" id="PSu-1c-DHV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bNc-nN-dIe" userLabel="First Responder" sceneMemberID="firstResponder"/>

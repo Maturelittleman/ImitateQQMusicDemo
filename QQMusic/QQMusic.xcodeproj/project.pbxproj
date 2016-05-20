@@ -13,6 +13,7 @@
 		27100E191CECA10700821E80 /* ZQAudioTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27100E181CECA10700821E80 /* ZQAudioTool.swift */; };
 		271B31981CED84670078AB6E /* QQDetailVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 271B31971CED84670078AB6E /* QQDetailVC.storyboard */; };
 		2732AB191CECA68100F99790 /* ZQAudioOperationTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2732AB181CECA68100F99790 /* ZQAudioOperationTool.swift */; };
+		273E672B1CEF758D0071C325 /* ZQTimeTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273E672A1CEF758D0071C325 /* ZQTimeTool.swift */; };
 		27621E211CEC03CF0025FA42 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27621E1F1CEC03CF0025FA42 /* Main.storyboard */; };
 		27621E231CEC03CF0025FA42 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27621E221CEC03CF0025FA42 /* Assets.xcassets */; };
 		27621E261CEC03CF0025FA42 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27621E241CEC03CF0025FA42 /* LaunchScreen.storyboard */; };
@@ -62,6 +63,7 @@
 		27621F0A1CEC17B30025FA42 /* Musics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27621EE11CEC17B30025FA42 /* Musics.plist */; };
 		27621F0C1CEC18690025FA42 /* QQListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27621F0B1CEC18690025FA42 /* QQListModel.swift */; };
 		27621F0F1CEC4B170025FA42 /* QQMusicDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27621F0E1CEC4B170025FA42 /* QQMusicDataTool.swift */; };
+		27BDF2A31CEE1E0F009CBAA5 /* QQMusicMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDF2A21CEE1E0F009CBAA5 /* QQMusicMessageModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,7 @@
 		27100E181CECA10700821E80 /* ZQAudioTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZQAudioTool.swift; sourceTree = "<group>"; };
 		271B31971CED84670078AB6E /* QQDetailVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = QQDetailVC.storyboard; sourceTree = "<group>"; };
 		2732AB181CECA68100F99790 /* ZQAudioOperationTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZQAudioOperationTool.swift; sourceTree = "<group>"; };
+		273E672A1CEF758D0071C325 /* ZQTimeTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZQTimeTool.swift; sourceTree = "<group>"; };
 		27621E181CEC03CF0025FA42 /* QQMusic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QQMusic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27621E201CEC03CF0025FA42 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		27621E221CEC03CF0025FA42 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../Assets.xcassets; sourceTree = "<group>"; };
@@ -141,6 +144,7 @@
 		27621EE11CEC17B30025FA42 /* Musics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Musics.plist; sourceTree = "<group>"; };
 		27621F0B1CEC18690025FA42 /* QQListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQListModel.swift; sourceTree = "<group>"; };
 		27621F0E1CEC4B170025FA42 /* QQMusicDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMusicDataTool.swift; sourceTree = "<group>"; };
+		27BDF2A21CEE1E0F009CBAA5 /* QQMusicMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMusicMessageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,6 +243,7 @@
 			children = (
 				27100E181CECA10700821E80 /* ZQAudioTool.swift */,
 				2732AB181CECA68100F99790 /* ZQAudioOperationTool.swift */,
+				273E672A1CEF758D0071C325 /* ZQTimeTool.swift */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -265,6 +270,7 @@
 		27621E521CEC07560025FA42 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				27BDF2A21CEE1E0F009CBAA5 /* QQMusicMessageModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -579,12 +585,14 @@
 				27621E581CEC07560025FA42 /* AppDelegate.swift in Sources */,
 				27100E171CEC894500821E80 /* UIView+Extension.swift in Sources */,
 				27621F0F1CEC4B170025FA42 /* QQMusicDataTool.swift in Sources */,
+				273E672B1CEF758D0071C325 /* ZQTimeTool.swift in Sources */,
 				27621E5E1CEC0A8C0025FA42 /* QQDetailVC.swift in Sources */,
 				2732AB191CECA68100F99790 /* ZQAudioOperationTool.swift in Sources */,
 				27100E141CEC69F800821E80 /* QQMusicListCell.swift in Sources */,
 				27621E5C1CEC09D50025FA42 /* QQListTVC.swift in Sources */,
 				27621F0C1CEC18690025FA42 /* QQListModel.swift in Sources */,
 				27100E191CECA10700821E80 /* ZQAudioTool.swift in Sources */,
+				27BDF2A31CEE1E0F009CBAA5 /* QQMusicMessageModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
