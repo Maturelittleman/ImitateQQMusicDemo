@@ -48,21 +48,28 @@ extension QQDetailVC {
         //判断当前状态
         if sender.selected {
             ZQAudioOperationTool.sharInstance.pauseCurrentMusic()
+            pauseRotationAnimation()
         }else {
             ZQAudioOperationTool.sharInstance.playCurrentMusic()
+            resumeRotationAnimation()
         }
     }
     
     //上一首
     @IBAction func preMusic() {
+        //切换歌曲
         ZQAudioOperationTool.sharInstance.preMusic()
+        //设置数据
         setUpDataOnce()
+        //添加专辑旋转动画
+        addRotationAnimation()
     }
     
     //下一首
     @IBAction func nextMusic() {
         ZQAudioOperationTool.sharInstance.nextMusic()
         setUpDataOnce()
+        addRotationAnimation()
     }
     
     //加载视图时调用
@@ -82,6 +89,7 @@ extension QQDetailVC {
         super.viewWillAppear(animated)
         addTimer()
         setUpDataOnce()
+        addRotationAnimation()
     }
     
     //视图即将离开时调用
@@ -210,6 +218,39 @@ extension QQDetailVC {
 
 //动画效果处理
 extension QQDetailVC: UIScrollViewDelegate{
+    
+    //专辑图片旋转
+    func addRotationAnimation() -> () {
+        
+        //移除之前的动画
+        foreImageView.layer.removeAllAnimations()
+        //添加动画
+        let animation = CABasicAnimation(keyPath: "transform.rotation.z")
+        //设置起始点
+        animation.fromValue = 0
+        //设置终点
+        animation.toValue = M_PI * 2
+        //设置动画时间
+        animation.duration = 30
+        //设置动画次数
+        animation.repeatCount = MAXFLOAT
+        //添加进空间
+        foreImageView.layer.addAnimation(animation, forKey: "transform")
+        
+    }
+    
+    //暂停动画
+    func pauseRotationAnimation() -> () {
+        
+        foreImageView.layer.pauseAnimate()
+        
+    }
+    
+    //继续动画
+    func resumeRotationAnimation() -> () {
+        foreImageView.layer.resumeAnimate()
+    }
+
     
     //拖动scrollView调用 歌词面板效果
     func scrollViewDidScroll(scrollView: UIScrollView) {

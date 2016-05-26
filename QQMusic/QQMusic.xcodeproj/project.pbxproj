@@ -63,6 +63,7 @@
 		27621F0A1CEC17B30025FA42 /* Musics.plist in Resources */ = {isa = PBXBuildFile; fileRef = 27621EE11CEC17B30025FA42 /* Musics.plist */; };
 		27621F0C1CEC18690025FA42 /* QQListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27621F0B1CEC18690025FA42 /* QQListModel.swift */; };
 		27621F0F1CEC4B170025FA42 /* QQMusicDataTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27621F0E1CEC4B170025FA42 /* QQMusicDataTool.swift */; };
+		277B85421CF6E61400F07B3A /* CALayer+sz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 277B85411CF6E61400F07B3A /* CALayer+sz.swift */; };
 		27BDF2A31CEE1E0F009CBAA5 /* QQMusicMessageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BDF2A21CEE1E0F009CBAA5 /* QQMusicMessageModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -144,6 +145,7 @@
 		27621EE11CEC17B30025FA42 /* Musics.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Musics.plist; sourceTree = "<group>"; };
 		27621F0B1CEC18690025FA42 /* QQListModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQListModel.swift; sourceTree = "<group>"; };
 		27621F0E1CEC4B170025FA42 /* QQMusicDataTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMusicDataTool.swift; sourceTree = "<group>"; };
+		277B85411CF6E61400F07B3A /* CALayer+sz.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CALayer+sz.swift"; sourceTree = "<group>"; };
 		27BDF2A21CEE1E0F009CBAA5 /* QQMusicMessageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQMusicMessageModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -224,6 +226,7 @@
 		27621E4B1CEC07560025FA42 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				277B85411CF6E61400F07B3A /* CALayer+sz.swift */,
 				27100E161CEC894500821E80 /* UIView+Extension.swift */,
 			);
 			path = Category;
@@ -590,6 +593,7 @@
 				2732AB191CECA68100F99790 /* ZQAudioOperationTool.swift in Sources */,
 				27100E141CEC69F800821E80 /* QQMusicListCell.swift in Sources */,
 				27621E5C1CEC09D50025FA42 /* QQListTVC.swift in Sources */,
+				277B85421CF6E61400F07B3A /* CALayer+sz.swift in Sources */,
 				27621F0C1CEC18690025FA42 /* QQListModel.swift in Sources */,
 				27100E191CECA10700821E80 /* ZQAudioTool.swift in Sources */,
 				27BDF2A31CEE1E0F009CBAA5 /* QQMusicMessageModel.swift in Sources */,
